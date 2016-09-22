@@ -1,6 +1,6 @@
 In this folder,
 
-1.
+1. copy_from_students.sh
 	copy_from_students.sh is copy files from students and backup
 	There are two kinds of hw : preview hw and HW.
 	Note that before use this, re-set "echo ${order}" as "${order}" (i.e. remove echo)
