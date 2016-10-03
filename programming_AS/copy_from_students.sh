@@ -30,8 +30,8 @@ lists=`cat $1`
 dest="${2}_back"
 order="mkdir ${dest}"
 echo ${order}
-
-if [ "${2:0:3}" == "pre" ];then
+par=${2}
+if [ "${par:0:3}" == "pre" ];then
 	#should be preview hw
 	# examplge ./copy_from_students.sh student_list pre02
 	# and pre02's content is CtoF.f95 and CtoF_x5.f95
@@ -44,7 +44,7 @@ if [ "${2:0:3}" == "pre" ];then
 		echo ${order}
 		for list in ${prehw}
 		do
-			order="cp /home/${header}/${student}/work/${list} ./${dest}/${student}_${2}/"
+			order="cp /home/${header}/${student}/work/${list} ./${dest}/${student}_${2}/${list}"
 			echo ${order}
 		done
 	done
@@ -57,6 +57,12 @@ else
 		header=`echo ${student:0:3} | tr [a-z] [A-Z]`
 		if [ -d "/home/${header}/${student}/${2}" ];then
 			order="cp -r /home/${header}/${student}/${2} ./${dest}/${student}_${2}"
+			echo ${order}
+		else
+			# if student don't have hw, check his/her state to make sure that he/she doesn't have hw
+			order="mkdir ./${dest}/${student}_${2}_empty"
+			echo ${order}
+			order="ll /home/${header}/${students}/ > ./${dest}/${students}_${2}_empty/current_state"
 			echo ${order}
 		fi
 	done
