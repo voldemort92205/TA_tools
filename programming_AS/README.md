@@ -1,25 +1,30 @@
-In this folder,
+# Usage of TA_tool for programming AS
+## Environment
 
-Environment:
-	Support only for 'program and Scientific Computing' in AS in NTU
-	If you are not sure whether these files can be used in your class, please feel free to contact with me.
-	The form of hw is:
-		preview hw : some files in ~/work/
-		HW: in ~/hwXX/
+* Machine: "study" in AS in NTU
+* Support only for the class: 'program and Scientific Computing' in AS in NTU (teacher: prof. Wei-Ting Chen)
+* If you are not sure whether these tools can be used in your class, please feel free to contact with me (r05229011@ntu.edu.tw).
+* The form of hw is:
+	* preview hw : some files in ~/work/
+	* HW: in ~/hwXX/
 
-Files:
-1. copy_from_students.sh
-	copy_from_students.sh is copy files from students and backup
-	There are two kinds of hw : 'preview hw' and 'HW'.
+## Tools
+> Copy_from_students.sh
 
-	Note that before use this, re-set "echo ${order}" as "${order}" (i.e. remove echo)
+**Goal:**
+copy_from_students.sh is to copy/backup files from students
 
-	student_list:
-		for each line, there is one and only one student_id (not including student's name)
+**Files prepared in advance:**
+* student_list:
+	* for each line, there is one and only one student_id (do not including student's name)
 
-	Following are two example for how to use this shell script:
-	for HW:
-		$ ./copy_from_students.sh student_list hw01
-	for preview hw:
-		$ ./copy_from_students.sh student_list pre02
-		and pre02 has a sample file in same folder
+**Usage:**
+There are two kinds of hw : 'preview hw' and 'HW', and following are two example for how to use this shell script:
+* for HW (hw01 is the folder):
+```sh
+$ ./copy_from_students.sh student_list hw01
+```
+* for preview hw (pre02 is a file that contains files assigned (there is an example for pre02)):
+```sh
+	$ ./copy_from_students.sh student_list pre02
+	```
