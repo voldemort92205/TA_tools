@@ -26,5 +26,5 @@ $ ./copy_from_students.sh student_list hw01
 ```
 * for preview hw (pre02 is a file that contains files assigned (there is an example for pre02)):
 ```sh
-	$ ./copy_from_students.sh student_list pre02
-	```
+$ ./copy_from_students.sh student_list pre02
+```
